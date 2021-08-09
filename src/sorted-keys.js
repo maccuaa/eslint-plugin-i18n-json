@@ -61,11 +61,10 @@ const sortedKeys = ([{ order = 'asc', sortFunctionPath, indentSpaces = 2 } = {}]
         loc: {
           start: {
             line: 0,
-            col: 0
+            column: 0
           }
         },
-        fix: fixer =>
-          fixer.replaceTextRange([0, source.length], sortedWithIndent),
+        fix: (fixer) => fixer.replaceTextRange([0, source.length], sortedWithIndent),
         line: 0,
         column: 0
       }

@@ -5,19 +5,18 @@ exports[`Snapshot Tests for Invalid Code map of comparison files - structure mis
 - Expected
 + Received
 
-@@ -2,10 +2,5 @@
+@@ -2,9 +2,4 @@
     \\"translationLevelOne\\": Object {
 -     \\"translationKeyA\\": \\"Message<String>\\",
 -     \\"translationLevelTwo\\": Object {
 -       \\"translationKeyB\\": \\"Message<String>\\",
 -       \\"translationsLevelThree\\": Object {
 -         \\"translationKeyC\\": \\"Message<String>\\",
+-       },
+-     },
 +     \\"translationKeyY\\": \\"Message<String>\\",
 +     \\"translationKeyZ\\": \\"Message<String>\\",
-    },
--     },
--   },
-  }"
+    },"
 `;
 
 exports[`Snapshot Tests for Invalid Code single comparison file - structure mismatch 1`] = `
@@ -25,19 +24,18 @@ exports[`Snapshot Tests for Invalid Code single comparison file - structure mism
 - Expected
 + Received
 
-@@ -2,10 +2,5 @@
+@@ -2,9 +2,4 @@
     \\"translationLevelOne\\": Object {
 -     \\"translationKeyA\\": \\"Message<String>\\",
 -     \\"translationLevelTwo\\": Object {
 -       \\"translationKeyB\\": \\"Message<String>\\",
 -       \\"translationsLevelThree\\": Object {
 -         \\"translationKeyC\\": \\"Message<String>\\",
+-       },
+-     },
 +     \\"translationKeyY\\": \\"Message<String>\\",
 +     \\"translationKeyZ\\": \\"Message<String>\\",
-    },
--     },
--   },
-  }"
+    },"
 `;
 
 exports[`Snapshot Tests for Invalid Code structure generator function - structure mismatch 1`] = `

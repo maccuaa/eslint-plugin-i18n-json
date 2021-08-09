@@ -45,7 +45,7 @@ const formatter = (results) => {
     }).join('');
 
     return `${fileMessagesHeader}${formattedFileMessages}`;
-  }).filter(fileLintMessages => fileLintMessages.trim().length > 0);
+  }).filter((fileLintMessages) => fileLintMessages.trim().length > 0);
 
   let aggregateReport = formattedLintMessagesPerFile.join('\n\n');
 

@@ -1,5 +1,5 @@
-const formatter = require('./formatter');
 const stripAnsi = require('strip-ansi');
+const formatter = require('./formatter');
 
 const strippedFormatter = (...args) => stripAnsi(formatter(...args));
 

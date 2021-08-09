@@ -3,7 +3,7 @@ const rule = require('./sorted-keys');
 
 jest.mock(
   'path/to/custom-sort.js',
-  () => translations => Object.keys(translations).sort((keyA, keyB) => keyA.localeCompare(keyB, 'de')),
+  () => (translations) => Object.keys(translations).sort((keyA, keyB) => keyA.localeCompare(keyB, 'de')),
   {
     virtual: true
   }

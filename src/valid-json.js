@@ -28,7 +28,7 @@ const validJSON = ([{ linter } = {}], source) => {
       loc: {
         start: {
           line: Number.parseInt(lineNumber, 10),
-          col: 0
+          column: 0
         }
       }
     });

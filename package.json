@@ -42,31 +42,31 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=12.0.0"
   },
   "peerDependencies": {
     "eslint": ">=4.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "espree": "^3.5.2",
-    "jest": "^23.0.4",
-    "strip-ansi": "^4.0.0"
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.24.0",
+    "espree": "8.0.0",
+    "jest": "27.0.6",
+    "strip-ansi": "6.0.0"
   },
   "dependencies": {
-    "chalk": "^2.3.2",
-    "indent-string": "^3.2.0",
-    "intl-messageformat-parser": "^5.4.0",
-    "jest-diff": "^22.0.3",
+    "chalk": "4.1.2",
+    "indent-string": "4.0.0",
+    "intl-messageformat-parser": "6.4.4",
+    "jest-diff": "27.0.6",
     "lodash.get": "^4.4.2",
     "lodash.isequal": "^4.5.0",
     "lodash.isplainobject": "^4.0.6",
     "lodash.set": "^4.3.2",
-    "log-symbols": "^2.2.0",
+    "log-symbols": "4.1.0",
     "parse-json": "^5.2.0",
-    "plur": "^2.1.2",
-    "pretty-format": "^22.0.3"
+    "plur": "4.0.0",
+    "pretty-format": "27.0.6"
   }
 }

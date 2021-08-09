@@ -1,5 +1,5 @@
 const set = require('lodash.set');
-const diff = require('jest-diff');
+const { diff } = require('jest-diff');
 const deepForOwn = require('./deep-for-own');
 
 const DIFF_OPTIONS = {

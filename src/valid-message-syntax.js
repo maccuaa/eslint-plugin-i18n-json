@@ -1,7 +1,7 @@
 const set = require('lodash.set');
-const diff = require('jest-diff');
+const { diff } = require('jest-diff');
 const isPlainObject = require('lodash.isplainobject');
-const prettyFormat = require('pretty-format');
+const { format: prettyFormat } = require('pretty-format');
 const icuValidator = require('./message-validators/icu');
 const notEmpty = require('./message-validators/not-empty');
 const isString = require('./message-validators/is-string');
@@ -94,7 +94,7 @@ const validMessageSyntax = (context, source) => {
         loc: {
           start: {
             line: 0,
-            col: 0
+            column: 0
           }
         }
       }
@@ -118,7 +118,7 @@ const validMessageSyntax = (context, source) => {
         loc: {
           start: {
             line: 0,
-            col: 0
+            column: 0
           }
         }
       }
@@ -179,7 +179,7 @@ const validMessageSyntax = (context, source) => {
         loc: {
           start: {
             line: 0,
-            col: 0
+            column: 0
           }
         }
       }

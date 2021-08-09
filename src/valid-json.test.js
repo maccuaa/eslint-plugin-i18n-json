@@ -1,27 +1,26 @@
-const rule = require('./valid-json');
 const { RuleTester } = require('eslint');
+const rule = require('./valid-json');
 
 const ruleTester = new RuleTester();
 
 jest.mock('chalk', () => ({
   bold: {
-    red: jest.fn(str => str)
+    red: jest.fn((str) => str)
   }
 }));
 
-jest.mock('./util/require-no-cache', () =>
-  jest.fn().mockImplementation((path) => {
-    switch (path) {
-      case './json-linter-pass.js':
-        return () => ({});
-      case './json-linter-error.js':
-        return () => {
-          throw new SyntaxError('line 5: invalid json syntax');
-        };
-      default:
-        return undefined;
-    }
-  }));
+jest.mock('./util/require-no-cache', () => jest.fn().mockImplementation((path) => {
+  switch (path) {
+    case './json-linter-pass.js':
+      return () => ({});
+    case './json-linter-error.js':
+      return () => {
+        throw new SyntaxError('line 5: invalid json syntax');
+      };
+    default:
+      return undefined;
+  }
+}));
 
 ruleTester.run('valid-json', rule, {
   valid: [
@@ -70,7 +69,7 @@ ruleTester.run('valid-json', rule, {
         {
           message: /\nInvalid JSON\.\n\n.*/,
           line: 0,
-          col: 0
+          column: 1
         }
       ]
     },
@@ -84,7 +83,7 @@ ruleTester.run('valid-json', rule, {
         {
           message: /\nInvalid JSON\.\n\n.*/,
           line: 0,
-          col: 0
+          column: 1
         }
       ]
     },
@@ -103,7 +102,7 @@ ruleTester.run('valid-json', rule, {
         {
           message: /\nInvalid JSON\.\n\n.*/,
           line: 5,
-          col: 0
+          column: 1
         }
       ]
     },
@@ -118,7 +117,7 @@ ruleTester.run('valid-json', rule, {
         {
           message: /\nInvalid JSON\.\n\n.*SyntaxError: Translation file must be a JSON object\./,
           line: 0,
-          col: 0
+          column: 1
         }
       ]
     }

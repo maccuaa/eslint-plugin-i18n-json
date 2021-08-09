@@ -39,13 +39,12 @@ jest.mock(
 
 jest.mock(
   'path/to/identity-structure.js',
-  () =>
-    jest
-      .fn()
-      .mockImplementationOnce(t => t)
-      .mockImplementationOnce(() => {
-        throw new Error('something went wrong');
-      }),
+  () => jest
+    .fn()
+    .mockImplementationOnce((t) => t)
+    .mockImplementationOnce(() => {
+      throw new Error('something went wrong');
+    }),
   {
     virtual: true
   }
@@ -53,10 +52,9 @@ jest.mock(
 
 jest.mock(
   'path/to/wrong-structure-generator.js',
-  () =>
-    jest.fn().mockImplementationOnce(() => ({
-      'other-key': 'other value'
-    })),
+  () => jest.fn().mockImplementationOnce(() => ({
+    'other-key': 'other value'
+  })),
   {
     virtual: true
   }

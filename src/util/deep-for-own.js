@@ -10,7 +10,7 @@ const isPlainObject = require('lodash.isplainobject');
 */
 
 const shouldIgnorePath = (ignoreList, keyPath) => ignoreList.includes(keyPath.join('.'));
-const defaultTraversal = obj => Object.keys(obj);
+const defaultTraversal = (obj) => Object.keys(obj);
 
 const deepForOwn = (obj, iteratee, {
   keyTraversal = defaultTraversal,

@@ -9,14 +9,13 @@ module.exports = {
   },
   processors: {
     '.json': {
-      preprocess: (source, filePath) =>
-        // augment the json into a comment
-        // along with the source path :D
-        // so we can pass it to the rules
+      // augment the json into a comment
+      // along with the source path :D
+      // so we can pass it to the rules
+      // note: due to the spaced comment rule, include
+      // spaced comments
+      preprocess: (source, filePath) => [`/* ${source.trim()} *//* ${filePath.trim()} */\n`],
 
-        // note: due to the spaced comment rule, include
-        // spaced comments
-        [`/* ${source.trim()} *//* ${filePath.trim()} */\n`],
       // since we only return one line in the preprocess step,
       // we only care about the first array of errors
       postprocess: ([errors]) => [...errors],

@@ -9,7 +9,7 @@ const noDifferenceRegex = /Compared\s+values\s+have\s+no\s+visual\s+difference/i
 const getKeyStructureFromMap = (filePathMap, sourceFilePath) => {
   // do a suffix match
   const match = Object.keys(filePathMap)
-    .filter(filePath => sourceFilePath.endsWith(filePath))
+    .filter((filePath) => sourceFilePath.endsWith(filePath))
     .pop();
   if (match) {
     try {
@@ -57,7 +57,7 @@ const getKeyStructureToMatch = (
           loc: {
             start: {
               line: 0,
-              col: 0
+              column: 0
             }
           }
         }
@@ -76,7 +76,7 @@ const getKeyStructureToMatch = (
             loc: {
               start: {
                 line: 0,
-                col: 0
+                column: 0
               }
             }
           }
@@ -103,7 +103,7 @@ const getKeyStructureToMatch = (
             loc: {
               start: {
                 line: 0,
-                col: 0
+                column: 0
               }
             }
           }
@@ -126,7 +126,7 @@ const getKeyStructureToMatch = (
           loc: {
             start: {
               line: 0,
-              col: 0
+              column: 0
             }
           }
         }
@@ -176,7 +176,7 @@ const identicalKeys = (context, source, sourceFilePath) => {
       loc: {
         start: {
           line: 0,
-          col: 0
+          column: 0
         }
       }
     }
