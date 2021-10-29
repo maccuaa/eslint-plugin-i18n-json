@@ -5,10 +5,10 @@
 
 /* eslint no-useless-concat: "off" */
 
-const chalk = require('chalk');
+const chalk = require('ansi-colors');
 const plur = require('plur');
-const logSymbols = require('log-symbols');
-const indentString = require('indent-string');
+const logSymbols = require('./log-symbols');
+const indentString = require('./indent-string');
 const path = require('path');
 
 const CWD = process.cwd();

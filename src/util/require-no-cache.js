@@ -1,4 +1,4 @@
-/* eslint-disable global-require, import/no-dynamic-require */
+/* eslint-disable global-require */
 
 // Delete the file from the require cache.
 // This forces the file to be read from disk again.

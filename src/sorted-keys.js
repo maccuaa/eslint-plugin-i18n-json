@@ -1,12 +1,15 @@
-const set = require('lodash.set');
-const equal = require('lodash.isequal');
-const isPlainObject = require('lodash.isplainobject');
-const deepForOwn = require('./util/deep-for-own');
-const keyTraversals = require('./util/key-traversals');
-const getTranslationFileSource = require('./util/get-translation-file-source');
-const requireNoCache = require('./util/require-no-cache');
+const set = require("lodash.set");
+const equal = require("lodash.isequal");
+const isPlainObject = require("lodash.isplainobject");
+const deepForOwn = require("./util/deep-for-own");
+const keyTraversals = require("./util/key-traversals");
+const getTranslationFileSource = require("./util/get-translation-file-source");
+const requireNoCache = require("./util/require-no-cache");
 
-const sortedKeys = ([{ order = 'asc', sortFunctionPath, indentSpaces = 2 } = {}], source) => {
+const sortedKeys = (
+  [{ order = "asc", sortFunctionPath, indentSpaces = 2 } = {}],
+  source
+) => {
   let translations = null;
 
   try {
@@ -21,7 +24,7 @@ const sortedKeys = ([{ order = 'asc', sortFunctionPath, indentSpaces = 2 } = {}]
 
   if (sortFunctionPath) {
     traversalOrder = requireNoCache(sortFunctionPath);
-  } else if (order.toLowerCase() === 'desc') {
+  } else if (order.toLowerCase() === "desc") {
     traversalOrder = keyTraversals.desc;
   } else {
     traversalOrder = keyTraversals.asc;
@@ -38,7 +41,7 @@ const sortedKeys = ([{ order = 'asc', sortFunctionPath, indentSpaces = 2 } = {}]
       sortedTranslationPaths.push(path);
     },
     {
-      keyTraversal: traversalOrder
+      keyTraversal: traversalOrder,
     }
   );
 
@@ -57,17 +60,18 @@ const sortedKeys = ([{ order = 'asc', sortFunctionPath, indentSpaces = 2 } = {}]
 
     return [
       {
-        message: 'Keys should be sorted, please use --fix.',
+        message: "Keys should be sorted, please use --fix.",
         loc: {
           start: {
             line: 0,
-            column: 0
-          }
+            column: 0,
+          },
         },
-        fix: (fixer) => fixer.replaceTextRange([0, source.length], sortedWithIndent),
+        fix: (fixer) =>
+          fixer.replaceTextRange([0, source.length], sortedWithIndent),
         line: 0,
-        column: 0
-      }
+        column: 0,
+      },
     ];
   }
   // no errors
@@ -76,36 +80,36 @@ const sortedKeys = ([{ order = 'asc', sortFunctionPath, indentSpaces = 2 } = {}]
 
 module.exports = {
   meta: {
-    fixable: 'code',
+    fixable: "code",
     docs: {
-      category: 'Stylistic Issues',
-      description: 'Ensure an order for the translation keys. (Recursive)',
-      recommended: true
+      category: "Stylistic Issues",
+      description: "Ensure an order for the translation keys. (Recursive)",
+      recommended: true,
     },
     schema: [
       {
         properties: {
           order: {
-            type: 'string'
+            type: "string",
           },
           sortFunctionPath: {
-            type: 'string'
+            type: "string",
           },
           indentSpaces: {
-            type: 'number'
-          }
+            type: "number",
+          },
         },
-        type: 'object',
-        additionalProperties: false
-      }
-    ]
+        type: "object",
+        additionalProperties: false,
+      },
+    ],
   },
   create(context) {
     return {
       Program(node) {
         const { valid, source } = getTranslationFileSource({
           context,
-          node
+          node,
         });
         if (!valid) {
           return;
@@ -114,7 +118,7 @@ module.exports = {
         errors.forEach((error) => {
           context.report(error);
         });
-      }
+      },
     };
-  }
+  },
 };

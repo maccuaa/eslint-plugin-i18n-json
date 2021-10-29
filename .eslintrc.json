@@ -7,13 +7,5 @@
   "parserOptions": {
     "ecmaVersion": 6
   },
-  "extends": ["airbnb-base"],
-  "rules": {
-    "comma-dangle": [
-      "error",
-      {
-        "functions": "never"
-      }
-    ]
-  }
+  "extends": ["eslint:recommended"],
 }

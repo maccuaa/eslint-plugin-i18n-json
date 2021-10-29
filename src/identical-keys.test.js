@@ -1,5 +1,5 @@
 const { RuleTester } = require('eslint');
-const strip = require('strip-ansi');
+const strip = require('../test/strip-ansi');
 const rule = require('./identical-keys');
 const runRule = require('../test/run-rule');
 

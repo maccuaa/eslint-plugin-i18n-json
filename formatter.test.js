@@ -1,4 +1,4 @@
-const stripAnsi = require('strip-ansi');
+const stripAnsi = require('./test/strip-ansi');
 const formatter = require('./formatter');
 
 const strippedFormatter = (...args) => stripAnsi(formatter(...args));
