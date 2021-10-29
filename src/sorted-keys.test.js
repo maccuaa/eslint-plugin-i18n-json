@@ -135,6 +135,7 @@ ruleTester.run("sorted-keys", rule, {
       filename: "file.json",
     },
   ],
+  // TODO: These tests are failing because ESLint throws a fatal error when parsing the output. For some reason it doesn't like JSON.
   invalid: [
     /*
       if order doesn't match what is specified,
