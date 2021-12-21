@@ -19,14 +19,14 @@ const main = {
   info: c.blue("ℹ"),
   success: c.green("✔"),
   warning: c.yellow("⚠"),
-  error: c.red("✖")
+  error: c.red("✖"),
 };
 
 const fallback = {
   info: c.blue("i"),
   success: c.green("√"),
   warning: c.yellow("‼"),
-  error: c.red("×")
+  error: c.red("×"),
 };
 
 const logSymbols = isUnicodeSupported() ? main : fallback;
