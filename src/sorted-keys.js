@@ -6,10 +6,7 @@ const keyTraversals = require("./util/key-traversals");
 const getTranslationFileSource = require("./util/get-translation-file-source");
 const requireNoCache = require("./util/require-no-cache");
 
-const sortedKeys = (
-  [{ order = "asc", sortFunctionPath, indentSpaces = 2 } = {}],
-  source
-) => {
+const sortedKeys = ([{ order = "asc", sortFunctionPath, indentSpaces = 2 } = {}], source) => {
   let translations = null;
 
   try {
@@ -52,11 +49,7 @@ const sortedKeys = (
   });
 
   if (!equal(originalTranslationPaths, sortedTranslationPaths)) {
-    const sortedWithIndent = JSON.stringify(
-      sortedTranslations,
-      null,
-      indentSpaces
-    );
+    const sortedWithIndent = JSON.stringify(sortedTranslations, null, indentSpaces);
 
     return [
       {
@@ -67,8 +60,7 @@ const sortedKeys = (
             column: 0,
           },
         },
-        fix: (fixer) =>
-          fixer.replaceTextRange([0, source.length], sortedWithIndent),
+        fix: (fixer) => fixer.replaceTextRange([0, source.length], sortedWithIndent),
         line: 0,
         column: 0,
       },
