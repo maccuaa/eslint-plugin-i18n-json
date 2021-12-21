@@ -1,4 +1,4 @@
-const c = require("./colors");
+const c = require("ansi-colors");
 
 function isUnicodeSupported() {
   if (process.platform !== "win32") {

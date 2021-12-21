@@ -6,12 +6,17 @@
 /* eslint no-useless-concat: "off" */
 
 const chalk = require("ansi-colors");
-const plur = require("plur");
 const logSymbols = require("./src/log-symbols");
 const indentString = require("./src/indent-string");
 const path = require("path");
 
 const CWD = process.cwd();
+
+const plur = (word = "", count = 0) => {
+  const isLower = word.slice(-1) === word.slice(-1).toLowerCase();
+  const plural = word.concat(isLower ? "s" : "S");
+  return Math.abs(count) === 1 ? word : plural;
+};
 
 const formatter = (results) => {
   let totalErrorsCount = 0;
