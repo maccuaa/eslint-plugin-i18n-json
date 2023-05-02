@@ -1,11 +1,13 @@
 {
   "name": "@maccuaa/eslint-plugin-i18n-json",
-  "version": "3.4.3",
+  "version": "4.0.0",
   "description": "Fully extendable eslint plugin for JSON i18n translation files.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "lint": "eslint *.js src/ --fix",
-    "test": "npm run lint && jest --coverage"
+    "compile": "tsc .",
+    "lint": "eslint *.ts src/",
+    "test": "vitest run --coverage"
   },
   "files": [
     "src",
@@ -14,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:godaddy/eslint-plugin-i18n-json"
+    "url": "git@github.com:maccuaa/eslint-plugin-i18n-json"
   },
   "keywords": [
     "eslint",
@@ -25,42 +27,35 @@
     "intl",
     "linter"
   ],
-  "author": "GoDaddy Operating Company, LLC",
-  "contributors": [
-    "Mayank Jethva <mjethva@godaddy.com>"
-  ],
-  "jest": {
-    "roots": [
-      "src/",
-      "<rootDir>"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "formatter.js"
-    ],
-    "testEnvironment": "node"
-  },
+  "author": "Andrew MacCuaig <andrewmaccuaig@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    "node": ">=18.0.0"
   },
   "peerDependencies": {
-    "eslint": "^7.0.0 || ^8.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.21.0",
-    "eslint-plugin-import": "^2.26.0",
-    "espree": "^9.3.3",
-    "jest": "^28.1.3"
+    "eslint": "^8.0.0"
   },
   "dependencies": {
-    "@formatjs/icu-messageformat-parser": "^2.1.4",
+    "@typescript-eslint/utils": "^5.54.1",
     "ansi-colors": "^4.1.3",
     "jest-diff": "^28.1.3",
     "lodash.isequal": "^4.5.0",
     "lodash.isplainobject": "^4.0.6",
     "lodash.set": "^4.3.2",
-    "parse-json": "^5.2.0",
-    "pretty-format": "^28.1.3"
+    "parse-json": "^5.2.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.0",
+    "@types/eslint": "^8.21.1",
+    "@types/lodash.isequal": "^4.5.5",
+    "@types/lodash.isplainobject": "^4.0.6",
+    "@types/lodash.set": "^4.3.6",
+    "@types/node": "^18.15.0",
+    "@types/parse-json": "^4.0.0",
+    "@typescript-eslint/parser": "^5.54.1",
+    "@vitest/coverage-istanbul": "^0.29.8",
+    "eslint": "^8.36.0",
+    "typescript": "^4.8.4",
+    "vitest": "^0.29.2"
   }
 }

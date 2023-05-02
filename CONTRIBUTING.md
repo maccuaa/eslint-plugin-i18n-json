@@ -16,7 +16,7 @@ series [How to Contribute to an Open Source Project on GitHub][egghead]
 > pull requests from branches on your fork. To do this, run:
 >
 > ```
-> git remote add upstream https://github.com/godaddy/eslint-plugin-i18n-json.git
+> git remote add upstream https://github.com/maccuaa/eslint-plugin-i18n-json.git
 > git fetch upstream
 > git branch --set-upstream-to=upstream/master master
 > ```
