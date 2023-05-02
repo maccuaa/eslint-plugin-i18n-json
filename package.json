@@ -5,15 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "compile": "tsc .",
-    "lint": "eslint *.ts src/",
+    "build": "run-s clean rome test compile",
+    "clean": "rimraf dist coverage",
+    "compile": "tsc",
+    "format": "rome format src",
+    "lint": "rome check src",
+    "rome": "rome ci src",
     "test": "vitest run --coverage"
   },
-  "files": [
-    "src",
-    "index.js",
-    "formatter.js"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:maccuaa/eslint-plugin-i18n-json"
@@ -46,7 +45,6 @@
   },
   "devDependencies": {
     "@tsconfig/node18": "^1.0.0",
-    "@types/eslint": "^8.21.1",
     "@types/lodash.isequal": "^4.5.5",
     "@types/lodash.isplainobject": "^4.0.6",
     "@types/lodash.set": "^4.3.6",
@@ -54,7 +52,9 @@
     "@types/parse-json": "^4.0.0",
     "@typescript-eslint/parser": "^5.54.1",
     "@vitest/coverage-istanbul": "^0.29.8",
-    "eslint": "^8.36.0",
+    "npm-run-all2": "^6.0.5",
+    "rimraf": "^5.0.0",
+    "rome": "^12.0.0",
     "typescript": "^4.8.4",
     "vitest": "^0.29.2"
   }

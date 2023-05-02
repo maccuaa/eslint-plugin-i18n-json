@@ -17,7 +17,15 @@ export const getTranslationFileSource = ({
   context: IdenticalKeysContext;
   node: TSESTree.Program;
 }) => {
-  if (!isJSONFile(context) || !Array.isArray(node.comments) || node.comments.length < 2) {
+  if (!isJSONFile(context)) {
+    return INVALID_SOURCE;
+  }
+
+  if (!Array.isArray(node.comments)) {
+    return INVALID_SOURCE;
+  }
+
+  if (node.comments.length < 2) {
     // is not a json file or the file
     // has not been through the plugin preprocessor
     return INVALID_SOURCE;
@@ -30,6 +38,6 @@ export const getTranslationFileSource = ({
   return {
     valid: true,
     source: source.trim(),
-    sourceFilePath: sourceFilePath && sourceFilePath.trim(),
+    sourceFilePath: sourceFilePath?.trim(),
   };
 };

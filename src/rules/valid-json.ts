@@ -9,7 +9,7 @@ import parseJson from "parse-json";
 
 const lineRegex = /line\s+(\d+):?/i;
 
-const validJSON = (context: ValidJsonContext, source: string): ReportDescriptor<ValidJsonMessageIds>[] => {
+const validJSON = (_: ValidJsonContext, source: string): ReportDescriptor<ValidJsonMessageIds>[] => {
   const errors: ReportDescriptor<ValidJsonMessageIds>[] = [];
 
   try {

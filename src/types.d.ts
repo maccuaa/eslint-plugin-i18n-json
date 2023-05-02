@@ -1,4 +1,7 @@
+import { TSESLint } from "@typescript-eslint/utils";
+
 export interface Json {
+  // rome-ignore lint/suspicious/noExplicitAny: <explanation>
   [key: string]: any;
 }
 

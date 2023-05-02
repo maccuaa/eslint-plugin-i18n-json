@@ -9,6 +9,7 @@
 </p>
 
 ❗ Forked from GoDaddy's [eslint-plugin-i18n-json](https://github.com/godaddy/eslint-plugin-i18n-json)
+
 🎉 [**Check out the introductory blog post!**](https://godaddy.github.io/2018/04/02/introducing-eslint-plugin-i18n-json/)
 
 ## Table of Contents

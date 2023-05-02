@@ -52,11 +52,11 @@ export const formatter = (results: ESLint.LintResult[]) => {
 
   // append in total error and warnings count to aggregrate report
   const totalErrorsCountFormatted = `${bold.red(">")} ${logSymbols.error} ${bold.red(
-    totalErrorsCount.toString()
+    totalErrorsCount.toString(),
   )} ${bold.red(plur("ERROR", totalErrorsCount))}`;
 
   const totalWarningsCountFormatted = `${bold.yellow(">")} ${logSymbols.warning} ${bold.yellow(
-    totalWarningsCount.toString()
+    totalWarningsCount.toString(),
   )} ${bold.yellow(plur("WARNING", totalWarningsCount))}`;
 
   aggregateReport += `\n\n${totalErrorsCountFormatted}\n${totalWarningsCountFormatted}`;

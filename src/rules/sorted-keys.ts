@@ -25,7 +25,7 @@ const sortedKeys = (context: SortedKeysContext, source: string): ReportDescripto
 
   try {
     translations = JSON.parse(source);
-  } catch (e) {
+  } catch (_) {
     // ignore errors, this will
     // be caught by the i18n-json/valid-json rule
     return [];
@@ -43,7 +43,7 @@ const sortedKeys = (context: SortedKeysContext, source: string): ReportDescripto
       set(sortedTranslations, path, isPlainObject(value) ? {} : value);
       sortedTranslationPaths.push(path);
     },
-    { keyTraversal }
+    { keyTraversal },
   );
 
   // only need to fix if the order of the keys is not the same
@@ -54,7 +54,7 @@ const sortedKeys = (context: SortedKeysContext, source: string): ReportDescripto
     (_: string, __: string, path: string) => {
       originalTranslationPaths.push(path);
     },
-    {}
+    {},
   );
 
   if (!equal(originalTranslationPaths, sortedTranslationPaths)) {

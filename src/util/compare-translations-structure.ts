@@ -18,7 +18,7 @@ const DIFF_OPTIONS = {
 export const compareTranslationsStructure = (
   settings: GlobalPluginSettings,
   translationsA: Json,
-  translationsB: Json
+  translationsB: Json,
 ) => {
   const augmentedTranslationsA = {};
   const augmentedTranslationsB = {};
@@ -31,18 +31,18 @@ export const compareTranslationsStructure = (
 
   deepForOwn(
     translationsA,
-    (_: string, key: string, path: string) => {
+    (_: string, __: string, path: string) => {
       set(augmentedTranslationsA, path, "Message<String>");
     },
-    { ignorePaths }
+    { ignorePaths },
   );
 
   deepForOwn(
     translationsB,
-    (_: string, key: string, path: string) => {
+    (_: string, __: string, path: string) => {
       set(augmentedTranslationsB, path, "Message<String>");
     },
-    { ignorePaths }
+    { ignorePaths },
   );
 
   return diff(augmentedTranslationsA, augmentedTranslationsB, DIFF_OPTIONS);

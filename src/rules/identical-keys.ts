@@ -11,9 +11,27 @@ const noDifferenceRegex = /Compared\s+values\s+have\s+no\s+visual\s+difference/i
 const identicalKeys = (
   context: IdenticalKeysContext,
   source: string,
-  sourceFilePath: string
+  sourceFilePath: string,
 ): ReportDescriptor<IdenticalKeysMessageIds>[] => {
-  const { options, settings = {} } = context;
+  const { options = [], settings = {} } = context;
+
+  if (!Array.isArray(options)) {
+    return [
+      {
+        messageId: "filePathMissing",
+        loc: {
+          start: {
+            line: 0,
+            column: 0,
+          },
+          end: {
+            line: 0,
+            column: 0,
+          },
+        },
+      },
+    ];
+  }
 
   const comparisonOptions = options[0];
 
@@ -21,13 +39,13 @@ const identicalKeys = (
 
   try {
     currentTranslations = JSON.parse(source);
-  } catch (e) {
+  } catch (_) {
     // don't return any errors
     // will be caught with the valid-json rule.
     return [];
   }
 
-  const { errors, keyStructure } = getKeyStructureToMatch(comparisonOptions, sourceFilePath);
+  const { errors, keyStructure } = getKeyStructureToMatch(sourceFilePath, comparisonOptions);
 
   if (errors) {
     // errors generated from trying to get the key structure
@@ -132,8 +150,8 @@ export default rule;
   }
  */
 const getKeyStructureToMatch = (
+  sourceFilePath: string,
   options: IdenticalKeysOptions = {},
-  sourceFilePath: string
 ): {
   errors?: ReportDescriptor<IdenticalKeysMessageIds>[];
   keyStructure: Json;
@@ -236,11 +254,11 @@ const getKeyStructureFromMap = (filePathMap: Json, sourceFilePath: string) => {
       return requireNoCache(filepath);
     } catch (e) {
       throw new Error(
-        `\n Error parsing or retrieving key structure comparison file based on "filePath" mapping\n\n "${match}" => "${filePathMap[match]}".\n\n Check the "filePath" option for this rule. \n ${e}`
+        `\n Error parsing or retrieving key structure comparison file based on "filePath" mapping\n\n "${match}" => "${filePathMap[match]}".\n\n Check the "filePath" option for this rule. \n ${e}`,
       );
     }
   }
   throw new Error(
-    '\n Current translation file does not have a matching entry in the "filePath" map.\n Check the "filePath" option for this rule.\n'
+    '\n Current translation file does not have a matching entry in the "filePath" map.\n Check the "filePath" option for this rule.\n',
   );
 };

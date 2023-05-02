@@ -160,11 +160,48 @@ describe("identical-keys", () => {
 
   describe("invalid", () => {
     test("no option passed", () => {
-      const errors = run({
+      // options is undefined
+      let errors = run({
         code: `
         /*{}*//*path/to/file.json*/
         `,
         filename: "file.json",
+      });
+
+      expect(errors).toHaveLength(1);
+      expect(errors[0].messageId).toBe("filePathMissing");
+
+      // options is empty array
+      errors = run({
+        code: `
+        /*{}*//*path/to/file.json*/
+        `,
+        filename: "file.json",
+        options: [],
+      });
+
+      expect(errors).toHaveLength(1);
+      expect(errors[0].messageId).toBe("filePathMissing");
+
+      // options is empty object
+      errors = run({
+        code: `
+        /*{}*//*path/to/file.json*/
+        `,
+        filename: "file.json",
+        options: [{}],
+      });
+
+      expect(errors).toHaveLength(1);
+      expect(errors[0].messageId).toBe("filePathMissing");
+
+      // options is empty string
+      errors = run({
+        code: `
+        /*{}*//*path/to/file.json*/
+        `,
+        filename: "file.json",
+        options: [{ filepath: "" }],
       });
 
       expect(errors).toHaveLength(1);
