@@ -13,7 +13,7 @@ const CWD = cwd();
  * Custom eslint formatter for eslint-plugin-i18n-json to allow better error message display.
  * Heavily inspired from https://github.com/sindresorhus/eslint-formatter-pretty.
  */
-export const formatter = (results: ESLint.LintResult[]) => {
+function formatter(results: ESLint.LintResult[]) {
   let totalErrorsCount = 0;
   let totalWarningsCount = 0;
 
@@ -62,6 +62,6 @@ export const formatter = (results: ESLint.LintResult[]) => {
   aggregateReport += `\n\n${totalErrorsCountFormatted}\n${totalWarningsCountFormatted}`;
 
   return totalErrorsCount + totalWarningsCount > 0 ? aggregateReport : "";
-};
+}
 
-export default formatter;
+module.exports = formatter;

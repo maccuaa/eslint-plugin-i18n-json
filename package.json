@@ -2,8 +2,17 @@
   "name": "@maccuaa/eslint-plugin-i18n-json",
   "version": "4.0.0",
   "description": "Fully extendable eslint plugin for JSON i18n translation files.",
-  "main": "index.js",
-  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "run-s clean rome test compile",
     "clean": "rimraf dist coverage",
@@ -13,9 +22,14 @@
     "rome": "rome ci src",
     "test": "vitest run --coverage"
   },
+  "author": "Andrew MacCuaig <andrewmaccuaig@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:maccuaa/eslint-plugin-i18n-json"
+  },
+  "bugs": {
+    "url": "https://github.com/maccuaa/eslint-plugin-i18n-json/issues"
   },
   "keywords": [
     "eslint",
@@ -26,11 +40,6 @@
     "intl",
     "linter"
   ],
-  "author": "Andrew MacCuaig <andrewmaccuaig@gmail.com>",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "peerDependencies": {
     "eslint": "^8.0.0"
   },
