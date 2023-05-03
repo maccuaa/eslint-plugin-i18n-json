@@ -44,27 +44,27 @@
     "eslint": "^8.0.0"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "^5.54.1",
+    "@typescript-eslint/utils": "^5.59.2",
     "ansi-colors": "^4.1.3",
-    "jest-diff": "^28.1.3",
+    "jest-diff": "^29.5.0",
     "lodash.isequal": "^4.5.0",
     "lodash.isplainobject": "^4.0.6",
     "lodash.set": "^4.3.2",
     "parse-json": "^5.2.0"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^1.0.0",
+    "@tsconfig/node18": "^2.0.0",
     "@types/lodash.isequal": "^4.5.5",
     "@types/lodash.isplainobject": "^4.0.6",
     "@types/lodash.set": "^4.3.6",
     "@types/node": "^18.15.0",
     "@types/parse-json": "^4.0.0",
-    "@typescript-eslint/parser": "^5.54.1",
-    "@vitest/coverage-istanbul": "^0.29.8",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@vitest/coverage-istanbul": "^0.30.1",
     "npm-run-all2": "^6.0.5",
     "rimraf": "^5.0.0",
     "rome": "^12.0.0",
-    "typescript": "^4.8.4",
-    "vitest": "^0.29.2"
+    "typescript": "^5.0.4",
+    "vitest": "^0.30.1"
   }
 }
