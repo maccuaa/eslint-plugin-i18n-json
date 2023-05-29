@@ -1,33 +1,35 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
+const formatter = require("@maccuaa/eslint-plugin-i18n-json/dist/formatter");
 
 module.exports = {
-  mode: 'development',
-  devServer: {
-    contentBase: './dist',
+  mode: "development",
+  output: {
+    path: `${__dirname}/dist`,
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
-      },
-      {
-        test: /\.json$/,
-        include: /i18n/,
-        loader: 'eslint-loader',
-        options: {
-          formatter: require('eslint-plugin-i18n-json/formatter.js'),
-        },
+        use: ["babel-loader"],
       },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
+      template: "./src/index.html",
+      filename: "index.html",
+    }),
+    new ESLintPlugin({
+      extensions: "js",
+    }),
+    new ESLintPlugin({
+      extensions: "json",
+      files: "./src/i18n",
+      formatter,
     }),
   ],
 };

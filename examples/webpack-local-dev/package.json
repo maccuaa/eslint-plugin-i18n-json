@@ -5,25 +5,24 @@
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --config webpack.config.dev.js",
-    "start:dev": "webpack-dev-server --open --config webpack.config.dev.js"
+    "start:dev": "webpack serve --open --config webpack.config.dev.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/eslint-parser": "^7.0.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^1.0.0",
-    "eslint": "^5.12.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-i18n-json": "^2.4.0",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
+    "@maccuaa/eslint-plugin-i18n-json": "4.0.0",
+    "babel-loader": "^9.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^8.41.0",
+    "eslint-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.1",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

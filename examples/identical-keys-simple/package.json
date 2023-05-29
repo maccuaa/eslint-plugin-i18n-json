@@ -2,8 +2,8 @@
   "author": "",
   "description": "",
   "devDependencies": {
-    "eslint": "^8.0.0",
-    "@maccuaa/eslint-plugin-i18n-json": "4.0.0"
+    "@maccuaa/eslint-plugin-i18n-json": "4.0.0",
+    "eslint": "^8.0.0"
   },
   "license": "MIT",
   "main": "index.js",
