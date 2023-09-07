@@ -11,7 +11,7 @@
     "@babel/eslint-parser": "^7.0.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "@maccuaa/eslint-plugin-i18n-json": "4.0.0",
+    "@maccuaa/eslint-plugin-i18n-json": "../../",
     "babel-loader": "^9.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.41.0",
