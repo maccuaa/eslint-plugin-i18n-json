@@ -1,0 +1,25 @@
+{
+  "author": "",
+  "description": "",
+  "devDependencies": {
+    "@maccuaa/eslint-plugin-i18n-json": "../..",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "vite": "^4.4.4",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vite",
+  "scripts": {
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --ext .json  --format node_modules/@maccuaa/eslint-plugin-i18n-json/dist/formatter.js ./src/i18n"
+  },
+  "version": "1.0.0"
+}
