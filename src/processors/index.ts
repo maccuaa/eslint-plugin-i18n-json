@@ -1,4 +1,4 @@
-import { TSESLint } from "@typescript-eslint/utils";
+import TSESLint from "@typescript-eslint/utils/ts-eslint";
 
 const jsonProcessor: TSESLint.Linter.Processor = {
   /**
@@ -17,6 +17,6 @@ const jsonProcessor: TSESLint.Linter.Processor = {
   supportsAutofix: true,
 };
 
-export = {
+export default {
   ".json": jsonProcessor,
 };

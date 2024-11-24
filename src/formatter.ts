@@ -1,6 +1,6 @@
 import { bold, inverse, underline, white } from "ansi-colors";
 
-import { ESLint } from "@typescript-eslint/utils/dist/ts-eslint";
+import { ESLint } from "@typescript-eslint/utils/ts-eslint";
 import { cwd } from "node:process";
 import { indentString } from "./util/indent-string";
 import { logSymbols } from "./util/log-symbols";

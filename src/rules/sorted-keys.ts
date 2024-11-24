@@ -1,6 +1,6 @@
 import { Json, SortedKeysContext, SortedKeysMessageIds, SortedKeysOptions } from "../types";
 
-import { ReportDescriptor } from "@typescript-eslint/utils/dist/ts-eslint";
+import { ReportDescriptor } from "@typescript-eslint/utils/ts-eslint";
 import { createRule } from "../util/createRule";
 import deepForOwn from "../util/deep-for-own";
 import equal from "lodash.isequal";

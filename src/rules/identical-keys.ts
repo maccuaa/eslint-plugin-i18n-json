@@ -1,6 +1,6 @@
 import { IdenticalKeysContext, IdenticalKeysMessageIds, IdenticalKeysOptions, Json } from "../types";
 
-import { ReportDescriptor } from "@typescript-eslint/utils/dist/ts-eslint";
+import { ReportDescriptor } from "@typescript-eslint/utils/ts-eslint";
 import { compareTranslationsStructure } from "../util/compare-translations-structure";
 import { createRule } from "../util/createRule";
 import { getTranslationFileSource } from "../util/get-translation-file-source";

@@ -1,6 +1,6 @@
 import { ValidJsonContext, ValidJsonMessageIds, ValidJsonOptions } from "../types";
 
-import { ReportDescriptor } from "@typescript-eslint/utils/dist/ts-eslint";
+import { ReportDescriptor } from "@typescript-eslint/dist/ts-eslint";
 import { bold } from "ansi-colors";
 import { createRule } from "../util/createRule";
 import { getTranslationFileSource } from "../util/get-translation-file-source";

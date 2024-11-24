@@ -1,4 +1,4 @@
-export = {
+export default {
   plugins: ["@maccuaa/i18n-json"],
   rules: {
     "@maccuaa/i18n-json/valid-json": 2,
